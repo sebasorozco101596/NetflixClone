@@ -77,20 +77,24 @@ struct TopMoviePreview: View {
                 }
             }
             .background(
+                LinearGradient.blackOpacityGradientTop
+                    .padding(.bottom, 450)
+            )
+            .background(
                 // Created in GlobalHelpers
-                LinearGradient.blackOpacityGradient
+                LinearGradient.blackOpacityGradientBotton
                     .padding(.top, 250)
             )
             
+            
         }
         .foregroundColor(.white)
-        
         
     }
 }
 
 struct TopMoviePreview_Previews: PreviewProvider {
     static var previews: some View {
-        TopMoviePreview(movie: exampleMovie1)
+        TopMoviePreview(movie: exampleMovie5)
     }
 }
