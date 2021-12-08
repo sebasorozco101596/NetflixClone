@@ -14,7 +14,7 @@ struct BackgroundMovie: View {
     var body: some View {
         ZStack {
             
-            Color.black.opacity(0.9)
+            Color.black.opacity(0.75)
                 .background(
                     // Created in GlobalHelpers
                     LinearGradient.blackOpacityBackgroundImage

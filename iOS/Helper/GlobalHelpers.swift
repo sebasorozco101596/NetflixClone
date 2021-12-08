@@ -25,6 +25,62 @@ let exampleTrailer3 = Trailer(name: "The Mysterious", videoURL: exampleVideoURL,
 
 let exampleTrailers = [exampleTrailer1, exampleTrailer2, exampleTrailer3]
 
+let episode1 = Episode(
+    name: "Beginings and Endings",
+    season: 1,
+    episodeNumber: 1,
+    thumbnailImageURLString: "https://picsum.photos/300/102",
+    description: "Six months after the disappearances, the police form a task from in 2052, Jonas learns that most of Winden perished in an apocalyptic event.",
+    length: 53,
+    videoURL: exampleImageURL)
+
+let episode2 = Episode(
+    name: "Beginings and Endings",
+    season: 1,
+    episodeNumber: 2,
+    thumbnailImageURLString: "https://picsum.photos/300/103",
+    description: "Clausen and Charlotte interview Regina. The Stranger takes Hannah to 1987, where Claudia has an unnerving encounter and Egon visits an old nemesis",
+    length: 57,
+    videoURL: exampleImageURL)
+
+let episode3 = Episode(
+    name: "Beginings and Endings",
+    season: 1,
+    episodeNumber: 3,
+    thumbnailImageURLString: "https://picsum.photos/300/104",
+    description: "In 1954, a missing Helge returns, but he'll only speak to Noah. In 1987, Claudia brings the time machine to Tannhaus, and Egon questions Ulrich again.",
+    length: 56,
+    videoURL: exampleImageURL)
+
+let episode4 = Episode(
+    name: "Beginings and Endings",
+    season: 2,
+    episodeNumber: 1,
+    thumbnailImageURLString: "https://picsum.photos/300/105",
+    description: "Six months after the disappearances, the police form a task from in 2052, Jonas learns that most of Winden perished in an apocalyptic event.",
+    length: 53,
+    videoURL: exampleImageURL)
+
+let episode5 = Episode(
+    name: "Beginings and Endings",
+    season: 2,
+    episodeNumber: 2,
+    thumbnailImageURLString: "https://picsum.photos/300/106",
+    description: "Clausen and Charlotte interview Regina. The Stranger takes Hannah to 1987, where Claudia has an unnerving encounter and Egon visits an old nemesis",
+    length: 57,
+    videoURL: exampleImageURL)
+
+let episode6 = Episode(
+    name: "Beginings and Endings",
+    season: 2,
+    episodeNumber: 3,
+    thumbnailImageURLString: "https://picsum.photos/300/107",
+    description: "In 1954, a missing Helge returns, but he'll only speak to Noah. In 1987, Claudia brings the time machine to Tannhaus, and Egon questions Ulrich again.",
+    length: 56,
+    videoURL: exampleImageURL)
+
+var allExampleEpisodes = [episode1, episode2,episode3,episode4,episode5,episode6]
+
 let exampleMovie1 = Movie(
     id: UUID().uuidString,
     name: "DARK",
@@ -32,11 +88,12 @@ let exampleMovie1 = Movie(
     categories: ["Dystopian", "Exciting", "Suspenseful", "Sci-Fi TV"],
     year: 2020,
     rating: "TV-MA",
-    numberOfSeasons: 1,
+    numberOfSeasons: 3,
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran bo Oban, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, exampleMovie7],
+    episodes: allExampleEpisodes,
     trailers: exampleTrailers)
 let exampleMovie2 = Movie(
     id: UUID().uuidString, name: "Travelers",

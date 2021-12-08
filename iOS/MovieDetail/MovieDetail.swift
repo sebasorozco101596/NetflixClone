@@ -13,100 +13,156 @@ struct MovieDetail: View {
     
     let screen = UIScreen.main.bounds
     
+    @State private var showSeasonPicker = false
+    @State private var selectedSeason = 1
+    
+    @Binding var movieDetailToShow: Movie?
+    
     var body: some View {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
             
-            HStack {
+            ZStack {
+                HStack {
                     Spacer()
                     
                     Button(action: {
                         // close this view
+                        movieDetailToShow = nil
                     }) {
                         Image(systemName: "xmark.circle")
                             .font(.system(size: 28))
                     }
                 }
                 .padding(.horizontal, 22)
-                .padding(.top, -430)
+                .padding(.top, -400)
                 .frame(alignment: .top)
-                .zIndex(1)
+                .zIndex(-1)
                 .foregroundColor(.white)
-            
-            VStack {
                 
-                ScrollView(.vertical, showsIndicators: true) {
-                    VStack {
-                        
-                        ZStack {
+                
+                VStack {
+                    
+                    ScrollView(.vertical, showsIndicators: true) {
+                        VStack {
                             
-                            BackgroundMovie(movie: movie)
-                                .scaledToFill()
-                                .frame(width: screen.width, height: 210, alignment: .leading)
-                                .edgesIgnoringSafeArea(.all)
-                            
-                            
-                            VStack {
-                                StandardHomeMovie(movie: movie)
-                                    .frame(width: screen.width / 2.5)
+                            ZStack {
                                 
-                                MovieInfoSubheadline(movie: movie)
+                                BackgroundMovie(movie: movie)
+                                    .scaledToFill()
+                                    .frame(width: screen.width, height: 210, alignment: .leading)
+                                    .edgesIgnoringSafeArea(.all)
                                 
-                                if movie.promotionHeadLine != nil {
-                                    Text(movie.promotionHeadLine!)
-                                        .bold()
-                                        .font(.headline)
+                                
+                                VStack {
+                                    StandardHomeMovie(movie: movie)
+                                        .frame(width: screen.width / 2.5)
+                                    
+                                    MovieInfoSubheadline(movie: movie)
+                                    
+                                    if movie.promotionHeadLine != nil {
+                                        Text(movie.promotionHeadLine!)
+                                            .bold()
+                                            .font(.headline)
+                                    }
                                 }
+                                
                             }
+                            
+                            PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red) {
+                                //
+                            }
+                            
+                            //Current Episode Information
+                            // 1. Default
+                            // 2. Personalized - where the user currently is
+                            
+                            CurrentEpisodeInformation(movie: movie)
+                            
+                            
+                            CastInfo(movie: movie)
+                            
+                            HStack(spacing: 60) {
+                                SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true) {
+                                    //
+                                }
+                                
+                                SmallVerticalButton(text: "Rate", isOnImage: "hand.thumbsup.fill", isOffImage: "hand.thumbsup", isOn: true) {
+                                    //
+                                }
+                                
+                                SmallVerticalButton(text: "Share", isOnImage: "square.and.arrow.up", isOffImage: "square.and.arrow.up", isOn: true) {
+                                    //
+                                }
+                                
+                                Spacer()
+                            }
+                            .padding(.leading, 20)
+                            
+                            CustomTabSwitcher(showSeasonPicker: $showSeasonPicker, selectedSeason: $selectedSeason, tabs: [.episodes, .trailers, .more], movie: exampleMovie1)
+                                .padding(.top, 10)
                             
                         }
+                        .padding(.top, 30)
+                    }
+                }
+                .foregroundColor(.white)
+                .zIndex(-2)
+                
+                
+                if showSeasonPicker {
+                    
+                    Group {
+                        Color.black.opacity(0.90)
+                            .padding(-50)
                         
-                        PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red) {
-                            //
-                        }
-                        
-                        //Current Episode Information
-                        // 1. Default
-                        // 2. Personalized - where the user currently is
-                        
-                        CurrentEpisodeInformation(movie: movie)
-                        
-                        
-                        CastInfo(movie: movie)
-                        
-                        HStack(spacing: 60) {
-                            SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true) {
-                                //
-                            }
+                        VStack(spacing: 40) {
                             
-                            SmallVerticalButton(text: "Rate", isOnImage: "hand.thumbsup.fill", isOffImage: "hand.thumbsup", isOn: true) {
-                                //
-                            }
+                            Spacer()
                             
-                            SmallVerticalButton(text: "Share", isOnImage: "square.and.arrow.up", isOffImage: "square.and.arrow.up", isOn: true) {
-                                //
+                            ForEach(0..<(movie.numberOfSeasons ?? 0)) { season in
+                                Button {
+                                    self.selectedSeason = season + 1
+                                    self.showSeasonPicker = false
+                                } label: {
+                                    Text("Season \(season + 1)")
+                                        .foregroundColor(selectedSeason == season + 1 ? .white : .gray)
+                                        .bold()
+                                        .font(selectedSeason == season + 1 ? .title : .title2)
+                                }
+                                
                             }
                             
                             Spacer()
+                            
+                            Button {
+                                self.showSeasonPicker = false
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.system(size: 40))
+                                    .foregroundColor(.white)
+                                    .scaleEffect(x: 1.1)
+                            }
+                            .padding(.bottom, 30)
+                            
                         }
-                        .padding(.leading, 20)
-                        
-                        CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: exampleMovie1)
-                            .padding(.top, 10)
                         
                     }
-                    .padding(.top, 30)
+                    .edgesIgnoringSafeArea(.all)
                 }
+                
+                
+                
+                
             }
-            .foregroundColor(.white)
         }
     }
 }
 
 struct MovieDetail_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetail(movie: exampleMovie6)
+        MovieDetail(movie: exampleMovie1, movieDetailToShow: .constant(nil))
     }
 }
 

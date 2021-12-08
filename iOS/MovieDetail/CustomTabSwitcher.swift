@@ -11,6 +11,9 @@ struct CustomTabSwitcher: View {
     
     @State private var currentTab: CustomTab = .episodes
     
+    @Binding var showSeasonPicker: Bool
+    @Binding var selectedSeason: Int
+    
     var tabs: [CustomTab]
     var movie: Movie
     
@@ -52,7 +55,7 @@ struct CustomTabSwitcher: View {
             // Selected View
             switch currentTab {
             case .episodes:
-                Text("Episodes")
+                EpisodesView(episodes: movie.episodes ?? [], showSeasonPicker: $showSeasonPicker, selectedSeason: $selectedSeason)
             case .trailers:
                 TrailerList(trailers: movie.trailers)
             case .more:
@@ -77,7 +80,9 @@ struct CustomTabSwitcher_Previews: PreviewProvider {
                 .edgesIgnoringSafeArea(.all)
             
             
-            CustomTabSwitcher(tabs: [.episodes, .trailers, .more] , movie: exampleMovie1)
+//            CustomTabSwitcher(tabs: [.episodes, .trailers, .more] , movie: exampleMovie1, showSeasonPicker: .constant(false), selectedSeason: .constant(1))
+            
+            CustomTabSwitcher(showSeasonPicker: .constant(false), selectedSeason: .constant(1), tabs: [.episodes, .trailers, .more], movie: exampleMovie1)
         }
         
         
