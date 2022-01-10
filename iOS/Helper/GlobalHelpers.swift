@@ -95,7 +95,8 @@ let exampleMovie1 = Movie(
     moreLikeThisMovies: [exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, exampleMovie7],
     episodes: allExampleEpisodes,
     trailers: exampleTrailers,
-    previewImageName: "darkPreview")
+    previewImageName: "darkPreview",
+    previewVideoURL: exampleVideoURL)
 let exampleMovie2 = Movie(
     id: UUID().uuidString, name: "Travelers",
     thumbnailURL: URL(string: "https://picsum.photos/200/300/")!,
@@ -109,7 +110,8 @@ let exampleMovie2 = Movie(
     moreLikeThisMovies: [],
     promotionHeadLine: "Best Rated Show",
     trailers: exampleTrailers,
-    previewImageName: "dirtyJohnPreview")
+    previewImageName: "dirtyJohnPreview",
+    previewVideoURL: exampleVideoURL)
 let exampleMovie3 = Movie(
     id: UUID().uuidString,
     name: "Community",
@@ -123,7 +125,8 @@ let exampleMovie3 = Movie(
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [],
     trailers: exampleTrailers,
-    previewImageName: "travelersPreview")
+    previewImageName: "travelersPreview",
+    previewVideoURL: exampleVideoURL)
 let exampleMovie4 = Movie(
     id: UUID().uuidString,
     name: "Alone",
@@ -138,7 +141,8 @@ let exampleMovie4 = Movie(
     moreLikeThisMovies: [],
     promotionHeadLine: "New Episodes Coming Soon",
     trailers: exampleTrailers,
-    previewImageName: "ozarkPreview")
+    previewImageName: "ozarkPreview",
+    previewVideoURL: exampleVideoURL)
 let exampleMovie5 = Movie(
     id: UUID().uuidString,
     name: "Hannibal",
@@ -151,7 +155,8 @@ let exampleMovie5 = Movie(
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [],
     trailers: exampleTrailers,
-    previewImageName: "whiteLinesPreview")
+    previewImageName: "whiteLinesPreview",
+    previewVideoURL: exampleVideoURL)
 let exampleMovie6 = Movie(
     id: UUID().uuidString,
     name: "After Life",
@@ -166,7 +171,8 @@ let exampleMovie6 = Movie(
     moreLikeThisMovies: [],
     promotionHeadLine: "Watch Season 6 now",
     trailers: exampleTrailers,
-    previewImageName: "darkPreview")
+    previewImageName: "darkPreview",
+    previewVideoURL: exampleVideoURL)
 
 let exampleMovie7 = Movie(
     id: UUID().uuidString,
@@ -182,7 +188,8 @@ let exampleMovie7 = Movie(
     moreLikeThisMovies: [],
     promotionHeadLine: "Watch Season 6 now",
     trailers: exampleTrailers,
-    previewImageName: "whiteLinesPreview")
+    previewImageName: "whiteLinesPreview",
+    previewVideoURL: exampleVideoURL)
 
 var exampleMovies: [Movie]  {
     return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6].shuffled()

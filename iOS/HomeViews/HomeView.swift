@@ -38,6 +38,8 @@ struct HomeView: View {
                         .padding(.top, -110)
                         .zIndex(-1) //Use for to show the topRowButtons. without it the Buttons will be hidden
                     
+                    MoviePreviewRow(movies: exampleMovies)
+                    
                     HomeStack(vm: vm, topRowSelection: topRowSelection, selectedGenre: homeGenre, movieDetailToShow: $movieDetailToShow)
                 }
             }
