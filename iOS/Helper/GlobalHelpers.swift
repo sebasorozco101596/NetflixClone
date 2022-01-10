@@ -94,7 +94,8 @@ let exampleMovie1 = Movie(
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, exampleMovie7],
     episodes: allExampleEpisodes,
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "darkPreview")
 let exampleMovie2 = Movie(
     id: UUID().uuidString, name: "Travelers",
     thumbnailURL: URL(string: "https://picsum.photos/200/300/")!,
@@ -107,7 +108,8 @@ let exampleMovie2 = Movie(
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [],
     promotionHeadLine: "Best Rated Show",
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "dirtyJohnPreview")
 let exampleMovie3 = Movie(
     id: UUID().uuidString,
     name: "Community",
@@ -120,7 +122,8 @@ let exampleMovie3 = Movie(
     creators: "Baran bo Oban, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [],
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "travelersPreview")
 let exampleMovie4 = Movie(
     id: UUID().uuidString,
     name: "Alone",
@@ -134,7 +137,8 @@ let exampleMovie4 = Movie(
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [],
     promotionHeadLine: "New Episodes Coming Soon",
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "ozarkPreview")
 let exampleMovie5 = Movie(
     id: UUID().uuidString,
     name: "Hannibal",
@@ -146,7 +150,8 @@ let exampleMovie5 = Movie(
     creators: "Baran bo Oban, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [],
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "whiteLinesPreview")
 let exampleMovie6 = Movie(
     id: UUID().uuidString,
     name: "After Life",
@@ -160,7 +165,8 @@ let exampleMovie6 = Movie(
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [],
     promotionHeadLine: "Watch Season 6 now",
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "darkPreview")
 
 let exampleMovie7 = Movie(
     id: UUID().uuidString,
@@ -175,7 +181,8 @@ let exampleMovie7 = Movie(
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [],
     promotionHeadLine: "Watch Season 6 now",
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "whiteLinesPreview")
 
 var exampleMovies: [Movie]  {
     return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6].shuffled()
@@ -207,5 +214,11 @@ extension String {
         let fontAttributes = [NSAttributedString.Key.font: font]
         let size = self.size(withAttributes: fontAttributes)
         return size.width
+    }
+}
+
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
