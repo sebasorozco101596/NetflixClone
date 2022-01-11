@@ -42,6 +42,9 @@
 		62AA5C55276321C1004316FF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AA5C54276321C1004316FF /* SearchBar.swift */; };
 		62AA5C5827632302004316FF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AA5C5727632302004316FF /* Colors.swift */; };
 		62AA5C5A2763293E004316FF /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AA5C592763293E004316FF /* ActivityIndicator.swift */; };
+		62CA9B28278D3EEE00048EF0 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CA9B27278D3EEE00048EF0 /* PreviewView.swift */; };
+		62CA9B2A278D3F2500048EF0 /* PreviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CA9B29278D3F2500048EF0 /* PreviewVM.swift */; };
+		62CA9B2C278D46BA00048EF0 /* PreviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CA9B2B278D46BA00048EF0 /* PreviewList.swift */; };
 		62E6BD562787ECED00DD2EC9 /* ComingSoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6BD552787ECED00DD2EC9 /* ComingSoon.swift */; };
 		62E6BD592787EDA000DD2EC9 /* NotificationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6BD582787EDA000DD2EC9 /* NotificationBar.swift */; };
 		62E6BD5B2787F15200DD2EC9 /* ComingSoonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6BD5A2787F15200DD2EC9 /* ComingSoonRow.swift */; };
@@ -87,6 +90,9 @@
 		62AA5C54276321C1004316FF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		62AA5C5727632302004316FF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		62AA5C592763293E004316FF /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		62CA9B27278D3EEE00048EF0 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		62CA9B29278D3F2500048EF0 /* PreviewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVM.swift; sourceTree = "<group>"; };
+		62CA9B2B278D46BA00048EF0 /* PreviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewList.swift; sourceTree = "<group>"; };
 		62E6BD552787ECED00DD2EC9 /* ComingSoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoon.swift; sourceTree = "<group>"; };
 		62E6BD582787EDA000DD2EC9 /* NotificationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBar.swift; sourceTree = "<group>"; };
 		62E6BD5A2787F15200DD2EC9 /* ComingSoonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonRow.swift; sourceTree = "<group>"; };
@@ -181,6 +187,9 @@
 				621BC595278BE15F002F0358 /* MoviePreviewRow.swift */,
 				621BC597278BE7C9002F0358 /* PagerView.swift */,
 				621BC59C278BF1FA002F0358 /* TrailerPlayerView.swift */,
+				62CA9B27278D3EEE00048EF0 /* PreviewView.swift */,
+				62CA9B29278D3F2500048EF0 /* PreviewVM.swift */,
+				62CA9B2B278D46BA00048EF0 /* PreviewList.swift */,
 			);
 			path = Preview;
 			sourceTree = "<group>";
@@ -356,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CA9B2C278D46BA00048EF0 /* PreviewList.swift in Sources */,
 				621BC596278BE15F002F0358 /* MoviePreviewRow.swift in Sources */,
 				620CC0A9275F41020034DF30 /* SwiftUIVideoView.swift in Sources */,
 				625CA279275DCB3900C33F70 /* GlobalHelpers.swift in Sources */,
@@ -367,6 +377,7 @@
 				62F7CD5C276054C60098DD41 /* EpisodesView.swift in Sources */,
 				620CC0AC275F43110034DF30 /* VideoPreviewImage.swift in Sources */,
 				620CC0A5275F3AB80034DF30 /* MoreLikeThis.swift in Sources */,
+				62CA9B2A278D3F2500048EF0 /* PreviewVM.swift in Sources */,
 				625CA27B275DCD1400C33F70 /* HomeVM.swift in Sources */,
 				62377C2E27723C2F00F9E4D4 /* GenerateMovies.swift in Sources */,
 				625CA25F275DC73200C33F70 /* ContentView.swift in Sources */,
@@ -381,6 +392,7 @@
 				62377C2C2772380400F9E4D4 /* SearchVM.swift in Sources */,
 				629DA21927828EF700E868A9 /* SearchResultsGrid.swift in Sources */,
 				62AA5C5827632302004316FF /* Colors.swift in Sources */,
+				62CA9B28278D3EEE00048EF0 /* PreviewView.swift in Sources */,
 				62E6BD5F2787F78F00DD2EC9 /* TrackableScrollView.swift in Sources */,
 				62377C2A277237C600F9E4D4 /* SearchView.swift in Sources */,
 				625CA25D275DC73200C33F70 /* NetflixCloneApp.swift in Sources */,

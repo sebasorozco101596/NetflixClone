@@ -26,5 +26,6 @@ struct TrailerPlayerView: View {
 struct TrailerPlayerView_Previews: PreviewProvider {
     static var previews: some View {
         TrailerPlayerView(videoURL: nil, playVideo: .constant(true))
+            .previewDevice("iPhone 11")
     }
 }

@@ -29,7 +29,7 @@ struct PagerView<Content: View>: View {
     var body: some View {
         GeometryReader { geo in
             
-            HStack {
+            HStack(spacing:0) {
                 self.content
                     .frame(width: geo.size.width)
             }
@@ -73,5 +73,6 @@ struct PagerDummy: View {
 struct PagerView_Previews: PreviewProvider {
     static var previews: some View {
         PagerDummy()
+            .previewDevice("iPhone 13 Pro Max")
     }
 }
